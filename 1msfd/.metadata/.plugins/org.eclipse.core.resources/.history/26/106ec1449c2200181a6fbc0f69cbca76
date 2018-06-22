@@ -1,0 +1,47 @@
+package toutiao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Hotel {
+	
+	public List<Integer> solution(int[] arr) {
+		List<Integer> list = new ArrayList<>();
+		
+		int[] hotel = input;
+		int[] bestpath = new int[hotel.length];
+		int[] stop = new int[hotel.length];
+
+		for (int i = 0; i < hotel.length; i++) {
+			bestpath[i] = (int) (Math.pow((200 - hotel[i]), 2));
+			stop[i] = 0;
+			for (int j = 0; j < i; j++) {
+				if (bestpath[j] + Math.pow((200 - (hotel[i] - hotel[j])), 2) < bestpath[i]) {
+					bestpath[i] = (int) (bestpath[j] + Math.pow(
+							(200 - (hotel[i] - hotel[j])), 2));
+					stop[i] = j + 1;
+				}
+			}
+		}
+
+		// Print the output
+		System.out.println("Minimal Penalty :"+bestpath[hotel.length - 1]);
+		
+		String finalPath = "";
+		int index = stop.length-1;
+		while(index>=0){
+			finalPath = (index+1)+" "+finalPath;
+			index = stop[index]-1;
+		}
+		System.out.println(Arrays.toString(stop));
+		System.out.println("Stop at: "+finalPath);
+		
+		return list;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

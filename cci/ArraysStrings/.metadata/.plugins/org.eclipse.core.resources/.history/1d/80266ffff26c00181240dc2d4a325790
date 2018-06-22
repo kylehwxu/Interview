@@ -1,0 +1,51 @@
+package findpattern;
+
+import java.util.*;
+
+public class StringPattern {
+	private boolean pattern(String s, String pattern) {
+		HashMap<Character, String> map = new HashMap<>();
+		HashSet<String> set = new HashSet<>();
+		
+		return helper(map, set, s, pattern);
+		
+	}
+	
+	private boolean helper(HashMap<Character, String> map,
+						   HashSet<String> set,
+						   String s,
+						   String pattern) {
+		if (s.length() == 0) {
+			if (pattern.length() == 0) {
+				return true;
+			}
+			return false;
+		}
+		
+		if (set.contains(s)) {
+			if (map.containsKey(pattern.charAt(0))) {
+				String tmp = map.get(pattern.charAt(0));
+				if (tmp.equals(s)) {
+					return pattern.length() - 1 == 0;
+				}
+			}
+		}
+		
+		for (int i = 0; i < s.length(); i++) {
+			String text = s.substring(0, i + 1);
+			if (set.contains(text)) {
+				continue;
+			}
+			
+		}
+		
+		
+		return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package reversepattern;
+
+public class ReversePattern {
+	private String solution(String s, String pattern) {
+		
+		String reverP = reverse(pattern);
+		
+		return s;
+	}
+	
+	private String reverse(String pattern) {
+		char[] res = pattern.toCharArray();
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

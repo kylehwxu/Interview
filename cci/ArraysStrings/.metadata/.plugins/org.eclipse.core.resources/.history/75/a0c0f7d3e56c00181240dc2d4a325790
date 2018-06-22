@@ -1,0 +1,45 @@
+package atoi;
+
+public class Atoi {
+	
+	private static int solution(String s) {
+		int index = 0;
+		int sign = 1;
+		int sum = 0;
+		
+		while (s.charAt(index) == ' ' && index < s.length()) {
+			index++;
+		}
+		
+		if (s.charAt(index) == '-') {
+			sign = -1;
+			index++;
+		}
+		
+		while (index < s.length()) {
+			if (s.charAt(index) < '0' || s.charAt(index) > '9') {
+				break;
+			}
+			if (sum > Integer.MAX_VALUE / 10 || (sum == Integer.MAX_VALUE / 10 && s.charAt(index) > Integer.MAX_VALUE % 10)) {
+				if (sign == 1) {
+					return Integer.MAX_VALUE;
+				}
+				return Integer.MIN_VALUE;
+			}
+			
+			sum = sum * 10 + s.charAt(index) - '0';
+			
+			index++;
+		}
+		
+		
+		
+		return sum * sign;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(solution("-91283472332"));
+	}
+
+}

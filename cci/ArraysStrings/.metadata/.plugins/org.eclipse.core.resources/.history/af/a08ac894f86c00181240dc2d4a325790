@@ -1,0 +1,13 @@
+package wordladder;
+
+public class WordLadder {
+	private boolean solution(String begin, String end, List<String> dict) {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

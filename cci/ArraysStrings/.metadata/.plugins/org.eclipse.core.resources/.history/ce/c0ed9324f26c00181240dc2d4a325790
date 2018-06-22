@@ -1,0 +1,18 @@
+package findpattern;
+
+import java.util.HashMap;
+
+public class StringPattern {
+	private boolean pattern(String s, String pattern) {
+		HashMap<Character, String> map = HashMap<>();
+		
+		
+		return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

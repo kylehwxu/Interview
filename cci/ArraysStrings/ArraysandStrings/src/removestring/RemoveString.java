@@ -1,0 +1,44 @@
+package removestring;
+
+public class RemoveString {
+	
+	private static String remove(String source, String pattern) {
+		if (pattern == null || source == null) {
+			return source;
+		}
+		String res = "";
+		int leftpoint = 0;
+		int rightpoint = 0;
+		int startpoint = 0;
+		for (int i = 0; i < source.length(); i++) {
+			leftpoint = i;
+			while (pattern.charAt(rightpoint++) == source.charAt(leftpoint++)) {
+				if (leftpoint == source.length()) {
+					if (rightpoint != pattern.length()) {
+						break;
+					}
+					return res + source.substring(startpoint, i);
+				}
+				if (rightpoint == pattern.length()) {
+					res += source.substring(startpoint, i);
+					System.out.println(res);
+					i = leftpoint;
+					startpoint = leftpoint;
+					break;
+				}
+			}
+			rightpoint = 0;
+		}
+		
+		res += source.substring(startpoint);
+		
+		
+		return res;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(remove("abc", "abcd"));
+	}
+
+}

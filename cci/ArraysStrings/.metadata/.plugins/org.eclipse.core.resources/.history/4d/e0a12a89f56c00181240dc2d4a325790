@@ -1,0 +1,16 @@
+package reversepattern;
+
+public class ReversePattern {
+	private String solution(String s, String pattern) {
+		
+		String reverP = reverse(pattern);
+		
+		return s;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

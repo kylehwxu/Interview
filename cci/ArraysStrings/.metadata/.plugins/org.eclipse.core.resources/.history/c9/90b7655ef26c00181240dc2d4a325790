@@ -1,0 +1,23 @@
+package findpattern;
+
+import java.util.*;
+
+public class StringPattern {
+	private boolean pattern(String s, String pattern) {
+		HashMap<Character, String> map = new HashMap<>();
+		HashSet<String> set = new HashSet<>();
+		
+		return helper(map, set, s, pattern);
+		
+	}
+	
+	private boolean helper() {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
